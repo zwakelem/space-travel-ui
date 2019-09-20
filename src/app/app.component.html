@@ -1,0 +1,44 @@
+<br><br><br>
+<div class="container">
+  <div class="row">
+    <div class="card text-center col-md-6 col-sm-8 offset-md-3 offset-sm-4">
+      <form [formGroup]="spaceTravelForm">
+      <div class="card-header header-text">
+        <i class="fa fa-space-shuttle fa-2x" aria-hidden="true"></i>
+      </div>
+      <div class="card-body">
+        <div class="form-group">
+          <label>I want to travel from</label>
+          <input type="text" class="form-control" placeholder="point A" formControlName="pointA"/>
+          <div class="alert alert-danger"
+               *ngIf="f.pointA.invalid && f.pointA.touched">
+            Where do you want to start?
+          </div>
+        </div>
+        <div class="form-group">
+          <label>to</label>
+          <input type="text" class="form-control" placeholder="point B" formControlName="pointB" />
+          <div class="alert alert-danger"
+               *ngIf="f.pointB.invalid && f.pointB.touched">
+            What is your destination?
+          </div>
+        </div>
+      </div>
+        <div class="alert alert-success" role="alert" *ngIf="showSuccess" id="successMessageId">
+          Your flight plan is : {{successMessage}}
+        </div>
+        <div class="alert alert-danger" role="alert" *ngIf="showError" id="errorMessageId">
+          {{errorMessage}}
+        </div>
+      </form>
+
+<!--      <div class="alert alert-danger" role="alert" *ngIf="showError">-->
+<!--        A simple danger alert—check it out!-->
+<!--      </div>-->
+      <div class="card-footer">
+        <button class="btn btn-primary btn-lg btn-block" (click)="onSubmit()"
+        [disabled]="spaceTravelForm.invalid" type="button">Tell me the shortest path</button>
+      </div>
+    </div>
+  </div>
+</div>

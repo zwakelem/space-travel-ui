@@ -1,0 +1,12 @@
+.header-text {
+  font-size: 1.8rem;
+  text-align: center;
+}
+
+.card {
+  padding: 0px;
+}
+
+#successMessageId {
+  margin: 0px 20px 20px;
+}
